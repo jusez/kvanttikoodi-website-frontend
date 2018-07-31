@@ -29,7 +29,7 @@ $(function() {
       $this = $("#sendMessageButton");
       $this.prop("disabled", true); // Disable submit button until AJAX call is complete to prevent duplicate messages
       $.ajax({
-        url: "/mail/contact_me",
+        url: "http://localhost:3001/contact",
         type: "POST",
         data: {
           name: name,
@@ -58,8 +58,6 @@ $(function() {
             .append("</button>");
           $('#success > .alert-danger').append($("<strong>").text("Pahoittelut " + firstName + ", näyttää siltä, että viestiä ei voida lähettää. Kokeile myöhemmin uudelleen tai soita vaikka minulle."));
           $('#success > .alert-danger').append('</div>');
-          //clear all fields
-          $('#contactForm').trigger("reset");
         },
         complete: function() {
           setTimeout(function() {
