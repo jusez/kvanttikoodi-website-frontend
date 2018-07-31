@@ -6,6 +6,7 @@ var rename = require("gulp-rename");
 var uglify = require('gulp-uglify');
 var pkg = require('./package.json');
 var browserSync = require('browser-sync').create();
+var rsync  = require('gulp-rsync');
 
 // Set the banner content
 var banner = ['/*!\n',
@@ -118,4 +119,32 @@ gulp.task('dev', ['css', 'js', 'browserSync'], function() {
   gulp.watch('./scss/*.scss', ['css']);
   gulp.watch('./js/*.js', ['js']);
   gulp.watch('./*.html', browserSync.reload);
+});
+
+//Deploy to production
+gulp.task('deploy', function() {
+  
+  // Dirs and Files to sync
+  rsyncPaths = [ 'vendor', 'css', 'js', 'img', 'index.html' ];
+  
+  // Default options for rsync
+  rsyncConf = {
+    progress: true,
+    incremental: true,
+    relative: true,
+    emptyDirectories: true,
+    recursive: true,
+    clean: true,
+    exclude: [],
+  };
+  
+  rsyncConf.hostname = 'kvanttikoodi.fi'; // hostname
+  rsyncConf.username = 'deploy'; // ssh username
+  rsyncConf.destination = '/var/www/frontend'; // path where uploaded files go
+    
+  
+  // Use gulp-rsync to sync the files 
+  return gulp.src(rsyncPaths)
+  .pipe(rsync(rsyncConf));
+
 });
