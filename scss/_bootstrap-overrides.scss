@@ -53,3 +53,8 @@ a {
     border-color: darken($secondary, 10%);
   }
 }
+
+.list-group-item {
+  border-color: lighten($white, 50%);
+  background-color: transparent;
+}

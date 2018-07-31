@@ -384,3 +384,8 @@ a:focus, a:hover, a:active {
   background-color: #f78200;
   border-color: #f78200;
 }
+
+.list-group-item {
+  border-color: white;
+  background-color: transparent;
+}
