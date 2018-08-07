@@ -125,7 +125,12 @@ gulp.task('dev', ['css', 'js', 'browserSync'], function() {
 gulp.task('deploy', function() {
   
   // Dirs and Files to sync
-  rsyncPaths = [ 'vendor', 'css', 'js', 'img', 'index.html' ];
+  rsyncPaths = [
+  'vendor', 'css', 'js', 'img', 'index.html', 'android-chrome-192x192.png',
+  'android-chrome-256x256.png', 'apple-touch-icon.png', 'browserconfig.xml', 'favicon-16x16.png',
+  'favicon-32x32.png', 'favicon.ico', 'mstile-150x150.png', 'safari-pinned-tab.svg', 'site.webmanifest',
+  'sitemap.xml'
+  ];
   
   // Default options for rsync
   rsyncConf = {
