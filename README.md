@@ -17,5 +17,6 @@ After installation, run `npm install` and then run `gulp dev` which will open up
 - `gulp css` compiles SCSS files into CSS and minifies the compiled CSS
 - `gulp js` minifies the themes JS file
 - `gulp vendor` copies dependencies from node_modules to the vendor directory
+- `gulp deploy` copies changed files to the server using rsync
 
 You must have npm and Gulp installed globally on your machine in order to use these features.

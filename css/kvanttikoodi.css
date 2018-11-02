@@ -8,7 +8,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 700;
+  font-weight: 600;
   font-family: 'Montserrat';
 }
 
@@ -99,7 +99,7 @@ section h2 {
 #mainNav {
   padding-top: 1rem;
   padding-bottom: 1rem;
-  font-weight: 700;
+  font-weight: 600;
   font-family: 'Montserrat';
 }
 
